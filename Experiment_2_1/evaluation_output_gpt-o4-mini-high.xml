@@ -1,0 +1,802 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Paragraphs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><Paragraph paragraphLabel="8.2.1.a.i">
+    <RelevantText>
+8.2.1 A Supplier must take the following actions to enable this outcome:
+  (a) Demonstrate fairness, courtesy, objectivity and efficiency: Suppliers must demonstrate, fairness and courtesy, objectivity, and efficiency by:
+    (i) Acknowledging a Complaint:
+      A. immediately where the Complaint is made in person or by telephone; 
+      B. within 2 Working Days of receipt where the Complaint is made by:
+        * email;
+        * being logged via the Supplier’s website or another website endorsed by the Supplier for that purpose;
+        * post; and
+        * telephone and a message is recorded without direct contact with a staff member of the Supplier.
+    </RelevantText>
+    <Rules>
+      <Rule ruleLabel="tcpc.8.2.1.a.i.A.1">
+        <Simple>
+          complaintInPerson(X) =&gt; [O] immediateComplaintAcknowledgment(X)
+        </Simple>
+        <Original>
+					complaint in person(X) =&gt; [OAPNP]immediate complaint acknowledgment(X)
+				</Original>
+      </Rule>
+      <Rule ruleLabel="tcpc.8.2.1.a.i.A.2">
+        <Simple>
+          complaint(X), -noContact(X) =&gt; [O] complaintAcknowledgment2WorkingDay(X)
+        </Simple>
+        <Original>
+					complaint(X), -no contact(X) =&gt; [OAPNP]complaint acknowledgment 2 working day(X)
+				</Original>
+      </Rule>
+      <Rule ruleLabel="tcpc.8.2.1.a.i.A.3">
+        <Simple>
+          callFromComplaintNumber(X), contactStaff(X) =&gt; [O] immediateComplaintAcknowledgment(X)
+        </Simple>
+        <Original>
+					call from complaint number(X),contact staff(X) =&gt; [OAPNP]immediate complaint acknowledgment(X)
+				</Original>
+      </Rule>
+    </Rules>
+  <Generated><Paragraph paragraphLabel="8.2.1.a.i">
+  <Rules>
+    <Rule ruleLabel="tcpc.8.2.1.a.i.1">complaint(X), inPerson(X) =&gt; [O] acknowledgeImmediately(X)</Rule>
+    <Rule ruleLabel="tcpc.8.2.1.a.i.2">complaint(X), telephone(X), directContact(X) =&gt; [O] acknowledgeImmediately(X)</Rule>
+    <Rule ruleLabel="tcpc.8.2.1.a.i.3">complaint(X), email(X) =&gt; [O] acknowledgeWithin2WorkingDays(X)</Rule>
+    <Rule ruleLabel="tcpc.8.2.1.a.i.4">complaint(X), loggedViaWebsite(X) =&gt; [O] acknowledgeWithin2WorkingDays(X)</Rule>
+    <Rule ruleLabel="tcpc.8.2.1.a.i.5">complaint(X), post(X) =&gt; [O] acknowledgeWithin2WorkingDays(X)</Rule>
+    <Rule ruleLabel="tcpc.8.2.1.a.i.6">complaint(X), telephone(X), -directContact(X) =&gt; [O] acknowledgeWithin2WorkingDays(X)</Rule>
+  </Rules>
+</Paragraph></Generated></Paragraph>
+
+
+  <Paragraph paragraphLabel="8.2.1.a.ii">
+    <RelevantText>
+8.2.1 A Supplier must take the following actions to enable this outcome:
+  (a) Demonstrate fairness, courtesy, objectivity and efficiency: Suppliers must demonstrate, fairness and courtesy, objectivity, and efficiency by:
+    (ii) where possible, seeking to Resolve a Complaint on first contact;
+    </RelevantText>
+    <Rules>
+      <Rule ruleLabel="tcpc.8.2.1.a.ii">
+        <Simple>
+          complaint(X), -noContact(X) =&gt; [O] checkImmediateResolution(X)
+        </Simple>
+        <Original>
+					complaint(X), -no contact(X) =&gt; [OAPNP]check immediate resolution(X)
+				</Original>
+      </Rule>
+      <Rule ruleLabel="tcpc.8.2.1.a.ii.1">
+        <Simple>
+          immediateResolutionAvailable(X) =&gt; [O] immediateResolution(X), [O] escalation(X)
+        </Simple>
+        <Original>
+					immediate resolution available(X) =&gt; [OANPNP]immediate resolution(X),[OAPP]escalation(X)
+				</Original>
+      </Rule>
+    </Rules>
+  <Generated><Paragraph paragraphLabel="8.2.1.a.ii">
+  <Rules>
+    <Rule ruleLabel="tcpc.8.2.1.a.ii.1">complaint(X), firstContact(X), possibleToResolve(X) =&gt; [O] resolve(X)</Rule>
+  </Rules>
+</Paragraph></Generated></Paragraph>
+
+
+  <Paragraph paragraphLabel="8.2.1.a.iii">
+    <RelevantText>
+8.2.1 A Supplier must take the following actions to enable this outcome:
+  (a) Demonstrate fairness, courtesy, objectivity and efficiency: Suppliers must demonstrate, fairness and courtesy, objectivity, and efficiency by:
+    (iii) implementing a process for the identification and management of Urgent Complaints;
+    </RelevantText>
+    <Rules>
+      <Rule ruleLabel="tcpc.8.2.1.a.iii">
+        <Simple>
+          complaint(X) =&gt; [O] checkIfUrgentComplaint(X)
+        </Simple>
+        <Original>
+					complaint(X) =&gt; [OAPNP]check if urgent complaint(X)
+				</Original>
+      </Rule>
+    </Rules>
+  <Generated><Paragraph paragraphLabel="8.2.1.a.iii">
+  <Rules>
+    <Rule ruleLabel="tcpc.8.2.1.a.iii.1">complaint(X), urgent(X) =&gt; [O] implementIdentificationProcessForUrgentComplaints(X)</Rule>
+    <Rule ruleLabel="tcpc.8.2.1.a.iii.2">complaint(X), urgent(X) =&gt; [O] implementManagementProcessForUrgentComplaints(X)</Rule>
+  </Rules>
+</Paragraph></Generated></Paragraph>
+
+
+  <Paragraph paragraphLabel="8.2.1.a.iv.A">
+    <RelevantText>
+8.2.1 A Supplier must take the following actions to enable this outcome:
+  (a) Demonstrate fairness, courtesy, objectivity and efficiency: Suppliers must demonstrate, fairness and courtesy, objectivity, and efficiency by:
+    (iv) requiring the appropriate Resolution of Complaints including:
+      A. ensuring relevant staff are aware of the potential remedies available to Resolve a Complaint;
+    </RelevantText>
+    <Rules>
+      <Rule ruleLabel="tcpc.8.2.1.a.iv.A">
+        <Simple>
+          relevantStaff(X) =&gt; [O] awarePossibleResolution(X)
+        </Simple>
+        <Original>
+					relevant staff(X) =&gt; [OM]aware possible resolution(X)
+				</Original>
+      </Rule>
+    </Rules>
+  <Generated><Paragraph paragraphLabel="8.2.1.a.iv.A">
+  <Rules>
+    <Rule ruleLabel="tcpc.8.2.1.a.iv.A.1">complaint(X) =&gt; [O] relevantStaffAwarePotentialRemedies(X)</Rule>
+  </Rules>
+</Paragraph></Generated></Paragraph>
+
+
+  <Paragraph paragraphLabel="8.2.1.a.iv.B">
+    <RelevantText>
+8.2.1 A Supplier must take the following actions to enable this outcome:
+  (a) Demonstrate fairness, courtesy, objectivity and efficiency: Suppliers must demonstrate, fairness and courtesy, objectivity, and efficiency by:
+    (iv) requiring the appropriate Resolution of Complaints including:
+      B. tailoring any remedy offered to address the root cause of the Complaint and to address the individual circumstances of the Consumer or former Customer where these have been advised to the Supplier;
+    </RelevantText>
+    <Rules>
+      <Rule ruleLabel="tcpc.8.2.1.a.iv.B.1">
+        <Simple>
+          complaintOnTopic(X), remedyForTopic(X) =&gt; [O] offerRemedy(X)
+        </Simple>
+        <Original>
+					complaint on topic(X),remedy for topic(X) =&gt; [OAPNP]offer remedy(X)
+				</Original>
+      </Rule>
+      <Rule ruleLabel="tcpc.8.2.1.a.iv.B.2">
+        <Simple>
+          customerAdviseSpecialCircumstance(X), remedyForSpecialCircumstance(X) =&gt; [O] offerRemedySpecialCircumstance(X)
+        </Simple>
+        <Original>
+					customer advise special circumstance(X),remedy for special circumstance(X) =&gt; [OAPNP]offer remedy special circumstance(X)
+				</Original>
+      </Rule>
+    </Rules>
+  <Generated><Paragraph paragraphLabel="8.2.1.a.iv.B">
+  <Rules>
+    <Rule ruleLabel="tcpc.8.2.1.a.iv.B.1">complaint(X), remedyOffered(X), rootCauseComplaint(X) &gt;= [O] tailorRemedyToAddressRootCause(X)</Rule>
+    <Rule ruleLabel="tcpc.8.2.1.a.iv.B.2">complaint(X), remedyOffered(X), individualCircumstancesAdvised(X) &gt;= [O] tailorRemedyToAddressIndividualCircumstances(X)</Rule>
+  </Rules>
+</Paragraph></Generated></Paragraph>
+
+
+  <Paragraph paragraphLabel="8.2.1.a.iv.C">
+    <RelevantText>
+8.2.1 A Supplier must take the following actions to enable this outcome:
+  (a) Demonstrate fairness, courtesy, objectivity and efficiency: Suppliers must demonstrate, fairness and courtesy, objectivity, and efficiency by:
+    (iv) requiring the appropriate Resolution of Complaints including:
+      C. where the Complaints are indicative of a wider problem or issue, addressing the root cause of the problem or issue; and
+    </RelevantText>
+    <Rules>
+      <Rule ruleLabel="tcpc.8.2.1.a.iv.C">
+        <Simple>
+          complaintOnTopic(X), complaintTopicIndicativeOfGeneralProblem(X), remedyForGeneralProblem(X) =&gt; [O] implementRemedyForGeneralProblem(X)
+        </Simple>
+        <Original>
+					complaint on topic(X),complaint topic indicative of general problem(X),remedy for general problem(X) =&gt; [OAPP]implement remedy for general problem(X)
+				</Original>
+      </Rule>
+    </Rules>
+  <Generated><Paragraph paragraphLabel="8.2.1.a.iv.C">
+  <Rules>
+    <Rule ruleLabel="tcpc.8.2.1.a.iv.C.1">complaint(X), indicativeOfWiderIssue(X) =&gt; [O] addressRootCauseOfIssue(X)</Rule>
+  </Rules>
+</Paragraph></Generated></Paragraph>
+
+
+  <Paragraph paragraphLabel="8.2.1.a.iv.D">
+    <RelevantText>
+8.2.1 A Supplier must take the following actions to enable this outcome:
+  (a) Demonstrate fairness, courtesy, objectivity and efficiency: Suppliers must demonstrate, fairness and courtesy, objectivity, and efficiency by:
+    (iv) requiring the appropriate Resolution of Complaints including:
+      D. resolving Billing errors in current Bills;
+    </RelevantText>
+    <Rules>
+      <Rule ruleLabel="tcpc.8.2.1.iv.D">
+        <Simple>
+          billingComplaint(X), billingError(X) =&gt; [O] fixErrorCurrentBillingPeriod(X)
+        </Simple>
+        <Original>
+					billing complaint(X),billing error(X) =&gt; [OAPNP]fix error current billing period(X)
+				</Original>
+      </Rule>
+    </Rules>
+  <Generated><Paragraph paragraphLabel="8.2.1.a.iv.D">
+  <Rules>
+    <Rule ruleLabel="tcpc.8.2.1.a.iv.D.1">complaint(X), billingError(X), currentBill(X) =&gt; [O] resolveBillingErrorInCurrentBill(X)</Rule>
+  </Rules>
+</Paragraph></Generated></Paragraph>
+
+
+  <Paragraph paragraphLabel="8.2.1.a.v">
+    <RelevantText>
+8.2.1 A Supplier must take the following actions to enable this outcome:
+  (a) Demonstrate fairness, courtesy, objectivity and efficiency: Suppliers must demonstrate, fairness and courtesy, objectivity, and efficiency by:
+    (v) not taking Credit Management action in relation to a specified disputed amount that is the subject of an unresolved Complaint in circumstances where the Supplier is aware that the Complaint has not been Resolved to the satisfaction of the Consumer and is being investigated by the Supplier, the TIO or a relevant recognised third party;
+    </RelevantText>
+    <Rules>
+      <Rule ruleLabel="tcpc.8.2.1.v.1">
+        <Simple>
+          complaint(X), -resolution(X), topicOfComplaintIsOnCredit(X) =&gt; [O] -creditManagementAction(X)
+        </Simple>
+        <Original>
+					complaint(X),-resolution(X),topic of complaint is on credit(X) =&gt; [OM]-credit management action(X)
+				</Original>
+      </Rule>
+      <Rule ruleLabel="tcpc.8.2.1.v.2">
+        <Simple>
+          -customerSatisfaction(X), investigated(X), resolution(X), topicOfComplaintIsOnCredit(X) =&gt; [O] -creditManagementAction(X)
+        </Simple>
+        <Original>
+					-customer satisfaction(X),investigated(X),resolution(X),topic of complaint is on credit(X) =&gt; [OM]-credit management action(X)
+				</Original>
+      </Rule>      
+    </Rules>
+  <Generated><Paragraph paragraphLabel="8.2.1.a.v">
+  <Rules>
+    <Rule ruleLabel="tcpc.8.2.1.a.v.1">complaint(X), disputedAmount(X), -resolvedToSatisfaction(X), awareNotResolvedToSatisfaction(X), investigatedBySupplier(X) =&gt; [F] takeCreditManagementAction(X)</Rule>
+    <Rule ruleLabel="tcpc.8.2.1.a.v.2">complaint(X), disputedAmount(X), -resolvedToSatisfaction(X), awareNotResolvedToSatisfaction(X), investigatedByTIO(X) =&gt; [F] takeCreditManagementAction(X)</Rule>
+    <Rule ruleLabel="tcpc.8.2.1.a.v.3">complaint(X), disputedAmount(X), -resolvedToSatisfaction(X), awareNotResolvedToSatisfaction(X), investigatedByThirdParty(X) =&gt; [F] takeCreditManagementAction(X)</Rule>
+  </Rules>
+</Paragraph></Generated></Paragraph>
+
+
+  <Paragraph paragraphLabel="8.2.1.a.vi">
+    <RelevantText>
+8.2.1 A Supplier must take the following actions to enable this outcome:
+  (a) Demonstrate fairness, courtesy, objectivity and efficiency: Suppliers must demonstrate, fairness and courtesy, objectivity, and efficiency by:
+    (vi) delaying commencement of any legal proceedings while a Complaint is being handled internally and for 7 Working Days after a Consumer or former Customer is advised of the outcome of their Complaint;
+    </RelevantText>
+    <Rules>
+      <Rule ruleLabel="tcpc.8.2.1.vi.A">
+        <Simple>
+          complaint(X), investigated(X) =&gt; [O] -initiateLegalProceedings(X)
+        </Simple>
+        <Original>
+					complaint(X),investigated(X) =&gt; [OM]-initiate legal proceedings(X)
+				</Original>
+      </Rule>
+      <Rule ruleLabel="tcpc.8.2.1.vi.B">
+        <Simple>
+          complaint(X), notificationSentLessThan7Days(X), resolution(X) =&gt; [O] -initiateLegalProceedings(X)
+        </Simple>
+        <Original>
+					complaint(X),notification sent less than 7 days(X),resolution(X) =&gt; [OM]-initiate legal proceedings(X)
+				</Original>
+      </Rule>
+    </Rules>
+  <Generated><Paragraph paragraphLabel="8.2.1.a.vi">
+  <Rules>
+    <Rule ruleLabel="tcpc.8.2.1.a.vi.1">complaint(X), handlingInternally(X) =&gt; [F] commenceLegalProceedings(X)</Rule>
+    <Rule ruleLabel="tcpc.8.2.1.a.vi.2">complaint(X), advisedOfOutcome(X), within7WorkingDays(X) =&gt; [F] commenceLegalProceedings(X)</Rule>
+  </Rules>
+</Paragraph></Generated></Paragraph>
+
+
+  <Paragraph paragraphLabel="8.2.1.a.vii">
+    <RelevantText>
+8.2.1 A Supplier must take the following actions to enable this outcome:
+  (a) Demonstrate fairness, courtesy, objectivity and efficiency: Suppliers must demonstrate, fairness and courtesy, objectivity, and efficiency by:
+    (vii) advising the Consumer or former Customer of the proposed Resolution of their Complaint within 15 Working Days from the date the Complaint is received in accordance with clause 8.2.1 (a);
+    </RelevantText>
+    <Rules>
+      <Rule ruleLabel="tcpc.8.2.1.a.vii">
+        <Simple>
+          complaint(X), complaintAcknowledgment(X) =&gt; [O] informProposedResolution15Days(X)
+        </Simple>
+        <Original>
+					complaint(X), complaint acknowledgment(X) =&gt; [OAPNP]inform proposed resolution 15 days(X)
+				</Original>
+      </Rule>
+      <Rule ruleLabel="tcpc.8.2.1.a.vii.ex">
+        <Simple>
+          complied821c(X) =&gt; [P] -informProposedResolution15Days(X)
+        </Simple>
+        <Original>
+					complied821c(X) =&gt; [P]-inform proposed resolution 15 days(X)
+				</Original>
+      </Rule>
+    </Rules>
+    <SuperiorityRelations>
+      <SuperiorityRelation inferiorRuleLabel="tcpc.8.2.1.a.vii" superiorRuleLabel="tcpc.8.2.1.a.vii.ex"/>
+    </SuperiorityRelations>
+  <Generated><Paragraph paragraphLabel="8.2.1.a.vii">
+  <Rules>
+    <Rule ruleLabel="tcpc.8.2.1.a.vii.1">complaint(X), received(X), within15WorkingDays(X) =&gt; [O] adviseProposedResolution(X)</Rule>
+  </Rules>
+</Paragraph></Generated></Paragraph>
+
+
+  <Paragraph paragraphLabel="8.2.1.a.viii">
+    <RelevantText>
+8.2.1 A Supplier must take the following actions to enable this outcome:
+  (a) Demonstrate fairness, courtesy, objectivity and efficiency: Suppliers must demonstrate, fairness and courtesy, objectivity, and efficiency by:
+    (viii) for Urgent Complaints, providing confirmation of the proposed Resolution of the urgent aspects of the Complaint and, if accepted by the Consumer, implementing the urgent aspects of the Resolution within 2 Working Days after the date the Complaint is received;
+    </RelevantText>
+    <Rules>
+      <Rule ruleLabel="tcpc.8.2.1.a.viii.1.ex">
+        <Simple>
+          complied821e(X) =&gt; [P] -informProposedResolution(X)
+        </Simple>
+        <Original>
+					complied821e(X) =&gt; [P]-inform proposed resolution(X)
+				</Original>
+      </Rule>
+      <Rule ruleLabel="tcpc.8.2.1.a.viii.1">
+        <Simple>
+          complaint(X), urgent(X), complaintAcknowledgment(X) =&gt; [O] informProposedResolution(X)
+        </Simple>
+        <Original>
+					complaint(X),urgent(X), complaint acknowledgment(X) =&gt; [OAPNP]inform proposed resolution(X)
+				</Original>
+      </Rule>
+      <Rule ruleLabel="tcpc.8.2.1.a.viii.2">
+        <Simple>
+          complaint(X), offerAccepted(X), urgent(X) =&gt; [O] implementResolution2Days(X)
+        </Simple>
+        <Original>
+					complaint(X),offer accepted(X),urgent(X) =&gt; [OAPNP]implement resolution 2 days(X)
+				</Original>
+      </Rule>
+    </Rules>
+  <Generated><Paragraph paragraphLabel="8.2.1.a.viii">
+  <Rules>
+    <Rule ruleLabel="tcpc.8.2.1.a.viii.1">complaint(X), urgent(X) =&gt; [O] confirmProposedUrgentResolution(X)</Rule>
+    <Rule ruleLabel="tcpc.8.2.1.a.viii.2">complaint(X), urgent(X), acceptedByConsumer(X), received(X), within2WorkingDays(X) =&gt; [O] implementUrgentResolution(X)</Rule>
+  </Rules>
+</Paragraph></Generated></Paragraph>
+
+
+  <Paragraph paragraphLabel="8.2.1.a.ix.A">
+    <RelevantText>
+8.2.1 A Supplier must take the following actions to enable this outcome:
+  (a) Demonstrate fairness, courtesy, objectivity and efficiency: Suppliers must demonstrate, fairness and courtesy, objectivity, and efficiency by:
+    (ix) where a Supplier does not believe the Complaint can be Resolved in 15 Working Days (or within 2 Working Days for the urgent aspects of an Urgent Complaint) the Supplier must, advise the Consumer or former Customer before Working Day 15 (or Working Day 2 for Urgent Complaints), of:
+        A. the reasons for the delay;
+    </RelevantText>
+    <Rules>
+      <Rule ruleLabel="tcpc.8.2.1.a.ix.A">
+        <Simple>
+          complaint(X), -resolvable15Days(X) =&gt; [O] informReasonsDelay(X)
+        </Simple>
+        <Original>
+					complaint(X),-resolvable 15 days(X) =&gt; [OAPNP]inform reasons delay(X)
+				</Original>
+      </Rule>
+      <Rule ruleLabel="tcpc.8.2.1.a.ix.A.u">
+        <Simple>
+          complaint(X), -resolvable2Days(X), urgent(X) =&gt; [O] informReasonsDelay(X)
+        </Simple>
+        <Original>
+					complaint(X),-resolvable 2 days(X),urgent(X) =&gt; [OAPNP]inform reasons delay(X)
+				</Original>
+      </Rule>
+    </Rules>
+  <Generated><Paragraph paragraphLabel="8.2.1.a.ix.A">
+  <Rules>
+    <Rule ruleLabel="tcpc.8.2.1.a.ix.A.1">complaint(X), -believeCanResolveWithin15WorkingDays(X), before15WorkingDays(X) =&gt; [O] adviseReasonsForDelay(X)</Rule>
+    <Rule ruleLabel="tcpc.8.2.1.a.ix.A.2">complaint(X), urgent(X), -believeCanResolveWithin2WorkingDays(X), before2WorkingDays(X) =&gt; [O] adviseReasonsForDelay(X)</Rule>
+  </Rules>
+</Paragraph></Generated></Paragraph>
+
+
+  <Paragraph paragraphLabel="8.2.1.a.ix.B">
+    <RelevantText>
+8.2.1 A Supplier must take the following actions to enable this outcome:
+  (a) Demonstrate fairness, courtesy, objectivity and efficiency: Suppliers must demonstrate, fairness and courtesy, objectivity, and efficiency by:
+    (ix) where a Supplier does not believe the Complaint can be Resolved in 15 Working Days (or within 2 Working Days for the urgent aspects of an Urgent Complaint) the Supplier must, advise the Consumer or former Customer before Working Day 15 (or Working Day 2 for Urgent Complaints), of:
+        B. the specific timeframe for completion of the Resolution; and
+    </RelevantText>
+    <Rules>
+      <Rule ruleLabel="tcpc.8.2.1.a.ix.B">
+        <Simple>
+          complaint(X), -resolvable15Days(X) =&gt; [O] informTimeframeForResolution(X)
+        </Simple>
+        <Original>
+					complaint(X),-resolvable 15 days(X) =&gt; [OAPNP]inform timeframe for resolution(X)
+				</Original>
+      </Rule>
+      <Rule ruleLabel="tcpc.8.2.1.a.ix.B.u">
+        <Simple>
+          complaint(X), -resolvable2Days(X), urgent(X) =&gt; [O] informTimeframeForResolution(X)
+        </Simple>
+        <Original>
+					complaint(X),-resolvable 2 days(X),urgent(X) =&gt; [OAPNP]inform timeframe for resolution(X)
+				</Original>
+      </Rule>
+    </Rules>
+  <Generated><Paragraph paragraphLabel="8.2.1.a.ix.B">
+  <Rules>
+    <Rule ruleLabel="tcpc.8.2.1.a.ix.B.1">complaint(X), -believeCanResolveWithin15WorkingDays(X), before15WorkingDays(X) =&gt; [O] adviseSpecificTimeframeForCompletion(X)</Rule>
+    <Rule ruleLabel="tcpc.8.2.1.a.ix.B.2">complaint(X), urgent(X), -believeCanResolveWithin2WorkingDays(X), before2WorkingDays(X) =&gt; [O] adviseSpecificTimeframeForCompletion(X)</Rule>
+  </Rules>
+</Paragraph></Generated></Paragraph>
+
+
+  <Paragraph paragraphLabel="8.2.1.a.ix.C">
+    <RelevantText>
+8.2.1 A Supplier must take the following actions to enable this outcome:
+  (a) Demonstrate fairness, courtesy, objectivity and efficiency: Suppliers must demonstrate, fairness and courtesy, objectivity, and efficiency by:
+    (ix) where a Supplier does not believe the Complaint can be Resolved in 15 Working Days (or within 2 Working Days for the urgent aspects of an Urgent Complaint) the Supplier must, advise the Consumer or former Customer before Working Day 15 (or Working Day 2 for Urgent Complaints), of:
+        C. if the anticipated delay is a further 10 Working Days or more and is not the result of a declared mass service disruption, advising the Consumer or former Customer of their options for external dispute resolution including the TIO;
+    </RelevantText>
+    <Rules>
+      <Rule ruleLabel="tcpc.8.2.1.a.ix.C">
+        <Simple>
+          complaint(X), -declareMassDisruption(X), -resolvable25Days(X) =&gt; [O] informExternalDisputeResolution(X)
+        </Simple>
+        <Original>
+					complaint(X),-declare mass disruption(X),-resolvable 25 days(X) =&gt; [OAPNP]inform external dispute resolution(X)
+				</Original>
+      </Rule>
+      <Rule ruleLabel="tcpc.8.2.1.a.ix.C.u">
+        <Simple>
+          complaint(X), -declareMassDisruption(X), -resolvable2Days(X), urgent(X) =&gt; [O] informExternalDisputeResolution(X)
+        </Simple>
+        <Original>
+					complaint(X),-declare mass disruption(X),-resolvable 2 days(X),urgent(X) =&gt; [OAPNP]inform external dispute resolution(X)
+				</Original>
+      </Rule>
+      <Rule ruleLabel="tcpc.8.2.1.a.ix.D.u">
+        <Simple>
+          =&gt; -declareMassDisruption(X)
+        </Simple>
+        <Original>
+					=&gt; -declare mass disruption(X)
+				</Original>
+      </Rule>
+    </Rules>
+  <Generated><Paragraph paragraphLabel="8.2.1.a.ix.C">
+  <Rules>
+    <Rule ruleLabel="tcpc.8.2.1.a.ix.C.1">complaint(X), -believeCanResolveWithin15WorkingDays(X), before15WorkingDays(X), anticipatedDelayMore10WorkingDays(X), -massServiceDisruption(X) =&gt; [O] adviseExternalDisputeResolutionOptions(X)</Rule>
+    <Rule ruleLabel="tcpc.8.2.1.a.ix.C.2">complaint(X), urgent(X), -believeCanResolveWithin2WorkingDays(X), before2WorkingDays(X), anticipatedDelayMore10WorkingDays(X), -massServiceDisruption(X) =&gt; [O] adviseExternalDisputeResolutionOptions(X)</Rule>
+  </Rules>
+</Paragraph></Generated></Paragraph>
+
+
+  <Paragraph paragraphLabel="8.2.1.a.x">
+    <RelevantText>
+8.2.1 A Supplier must take the following actions to enable this outcome:
+  (a) Demonstrate fairness, courtesy, objectivity and efficiency: Suppliers must demonstrate, fairness and courtesy, objectivity, and efficiency by:
+    (x) advising Consumers or former Customers of any delays to promised timeframes;
+    </RelevantText>
+    <Rules>
+      <Rule ruleLabel="tcpc.8.2.1.a.x">
+        <Simple>
+          complaint(X), delayInResolution(X) =&gt; [O] informDelay(X)
+        </Simple>
+        <Original>
+					complaint(X),delay in resolution(X) =&gt; [OAPNP]inform delay(X)
+				</Original>
+      </Rule>
+    </Rules>
+  <Generated><Paragraph paragraphLabel="8.2.1.a.x">
+  <Rules>
+    <Rule ruleLabel="tcpc.8.2.1.a.x.1">complaint(X), delay(X), promisedTimeframe(X) =&gt; [O] adviseDelayToPromisedTimeframe(X)</Rule>
+  </Rules>
+</Paragraph></Generated></Paragraph>
+
+
+  <Paragraph paragraphLabel="8.2.1.a.xi">
+    <RelevantText>
+8.2.1 A Supplier must take the following actions to enable this outcome:
+  (a) Demonstrate fairness, courtesy, objectivity and efficiency: Suppliers must demonstrate, fairness and courtesy, objectivity, and efficiency by:
+    (xi) providing a means for the Consumer or former Customer to monitor the Complaint's progress;
+    </RelevantText>
+    <Rules>
+      <Rule ruleLabel="tcpc.8.2.1.a.xi">
+        <Simple>
+          complaint(X), complaintAcknowledgment(X) =&gt; [O] customerMonitorProgress(X)
+        </Simple>
+        <Original>
+					complaint(X),complaint acknowledgment(X) =&gt; [OM]customer monitor progress(X)
+				</Original>
+      </Rule>
+    </Rules>
+  <Generated><Paragraph paragraphLabel="8.2.1.a.xi">
+  <Rules>
+    <Rule ruleLabel="tcpc.8.2.1.a.xi.1">complaint(X) =&gt; [O] provideMeansMonitorProgress(X)</Rule>
+  </Rules>
+</Paragraph></Generated></Paragraph>
+
+
+  <Paragraph paragraphLabel="8.2.1.a.xii">
+    <RelevantText>
+8.2.1 A Supplier must take the following actions to enable this outcome:
+  (a) Demonstrate fairness, courtesy, objectivity and efficiency: Suppliers must demonstrate, fairness and courtesy, objectivity, and efficiency by:
+    (xii) advising Consumers or former Customers in everyday language of the Resolution of their Complaint, as soon as practicable after the Supplier completes its investigation of the Complaint;
+    </RelevantText>
+    <Rules>
+      <Rule ruleLabel="tcpc.8.2.1.a.xii">
+        <Simple>
+          complaint(X), investigated(X) =&gt; [O] informProposedResolution(X)
+        </Simple>
+        <Original>
+					complaint(X),investigated(X) =&gt; [OAPNP]inform proposed resolution(X)
+				</Original>
+      </Rule>
+    </Rules>
+  <Generated><Paragraph paragraphLabel="8.2.1.a.xii">
+  <Rules>
+    <Rule ruleLabel="tcpc.8.2.1.a.xii.1">complaint(X), investigationCompleted(X), practicable(X) =&gt; [O] adviseResolutionInEverydayLanguage(X)</Rule>
+  </Rules>
+</Paragraph></Generated></Paragraph>
+
+
+  <Paragraph paragraphLabel="8.2.1.a.xiii">
+    <RelevantText>
+8.2.1 A Supplier must take the following actions to enable this outcome:
+  (a) Demonstrate fairness, courtesy, objectivity and efficiency: Suppliers must demonstrate, fairness and courtesy, objectivity, and efficiency by:
+    (xiii) completing all necessary actions to deliver the Resolution offered within 10 Working Days of the Consumer’s or former Customer’s acceptance of that Resolution unless:
+        A. otherwise agreed with the Consumer or former Customer; or 
+        B. the actions are contingent on actions by the Consumer or former Customer that have not been completed;
+    </RelevantText>
+    <Rules>
+      <Rule ruleLabel="tcpc.8.2.1.a.xiii.A">
+        <Simple>
+          complaint(X), informProposedResolution(X), offerAccepted(X) =&gt; [O] resolve10Days(X)
+        </Simple>
+        <Original>
+					complaint(X),inform proposed resolution(X),offer accepted(X) =&gt; [OAPNP]resolve 10 days(X)
+				</Original>
+      </Rule> 
+      <Rule ruleLabel="tcpc.8.2.1.a.xiii.B.1">
+        <Simple>
+          agreedCustomResolutionDate(X), complaint(X) =&gt; [O] resolveByCustomDate(X)
+        </Simple>
+        <Original>
+					agreed custom resolution date(X),complaint(X) =&gt; [OAPNP]resolve by custom date(X)
+				</Original>
+      </Rule>
+      <Rule ruleLabel="tcpc.8.2.1.a.xiii.B.2">
+        <Simple>
+          agreedCustomResolutionDate(X), complaint(X) =&gt; -[O] resolve10Days(X)
+        </Simple>
+        <Original>
+					agreed custom resolution date(X),complaint(X) =&gt; [-OAPNP]resolve 10 days(X)
+				</Original>
+      </Rule>
+      <Rule ruleLabel="tcpc.8.2.1.a.xiii.B.3">
+        <Simple>
+          complaint(X), pendingCustomerAction(X) =&gt; -[O] resolve10Days(X)
+        </Simple>
+        <Original>
+          complaint(X),pending customer action(X) =&gt; [-OAPNP]resolve 10 days(X)
+        </Original>
+      </Rule>
+    </Rules>
+    <SuperiorityRelations>
+      <SuperiorityRelation inferiorRuleLabel="tcpc.8.2.1.a.xiii.A" superiorRuleLabel="tcpc.8.2.1.a.xiii.B.2"/>
+    </SuperiorityRelations>
+  <Generated><Paragraph paragraphLabel="8.2.1.a.xiii">
+  <Rules>
+    <Rule ruleLabel="tcpc.8.2.1.a.xiii.1">complaint(X), consumerAcceptedResolution(X), within10WorkingDays(X), -otherwiseAgreed(X), -contingentOnConsumerAction(X) =&gt; [O] deliverResolution(X)</Rule>
+    <Rule ruleLabel="tcpc.8.2.1.a.xiii.2">complaint(X), consumerAcceptedResolution(X), within10WorkingDays(X), -otherwiseAgreed(X), contingentOnConsumerAction(X), consumerActionCompleted(X) =&gt; [O] deliverResolution(X)</Rule>
+  </Rules>
+</Paragraph></Generated></Paragraph>
+
+
+  <Paragraph paragraphLabel="8.2.1.a.xiv">
+    <RelevantText>
+8.2.1 A Supplier must take the following actions to enable this outcome:
+  (a) Demonstrate fairness, courtesy, objectivity and efficiency: Suppliers must demonstrate, fairness and courtesy, objectivity, and efficiency by:
+    (xiv) only Closing a Complaint with the consent of the Consumer or former Customer or if clauses 8.2.1(c),(d) or (e) below have been complied with; and
+    </RelevantText>
+    <Rules>
+      <Rule ruleLabel="tcpc.8.2.1.a.xiv">
+        <Simple>
+          complaint(X) =&gt; [O] -closeCase(X)
+        </Simple>
+        <Original>
+					complaint(X) =&gt; [OM]-close case(X)
+				</Original>
+      </Rule>
+      <Rule ruleLabel="tcpc.8.2.1.a.xiv.1">
+        <Simple>
+          complaint(X), customerConsentCloseCase(X) =&gt; -[O] -closeCase(X)
+        </Simple>
+        <Original>
+					complaint(X),customer consent close case(X) =&gt; [-OM]-close case(X)
+				</Original>
+      </Rule>
+      <Rule ruleLabel="tcpc.8.2.1.a.xiv.2">
+        <Simple>
+          complaint(X), complied821c(X) =&gt; -[O] -closeCase(X)
+        </Simple>
+        <Original>
+					complaint(X),complied821c(X) =&gt; [-OM]-close case(X)
+				</Original>
+      </Rule>
+      <Rule ruleLabel="tcpc.8.2.1.a.xiv.3">
+        <Simple>
+          complaint(X), escalation(X), frivolousOrVexatious(X), informReasonsNotToProceed(X), noFurtherAssistance(X) =&gt; -[O] -closeCase(X)
+        </Simple>
+        <Original>
+					complaint(X),escalation(X),frivolous or vexatious(X),inform reasons not to proceed(X),no further assistance(X) =&gt; [-OM]-close case(X)
+				</Original>
+      </Rule>
+      <Rule ruleLabel="tcpc.8.2.1.a.xiv.4">
+        <Simple>
+          complaint(X), complied821e(X) =&gt; -[O] -closeCase(X)
+        </Simple>
+        <Original>
+					complaint(X),complied821e(X) =&gt; [-OM]-close case(X)
+				</Original>
+      </Rule>
+      <Rule ruleLabel="tcpc.8.2.1.a.xiv.5">
+        <Simple>
+          =&gt; -closeCase(X)
+        </Simple>
+        <Original>
+          =&gt; -close case(X)
+        </Original>
+      </Rule>
+    </Rules>
+    <SuperiorityRelations>
+      <SuperiorityRelation inferiorRuleLabel="tcpc.8.2.1.a.xiv" superiorRuleLabel="tcpc.8.2.1.a.xiv.1"/>
+      <SuperiorityRelation inferiorRuleLabel="tcpc.8.2.1.a.xiv" superiorRuleLabel="tcpc.8.2.1.a.xiv.2"/>
+      <SuperiorityRelation inferiorRuleLabel="tcpc.8.2.1.a.xiv" superiorRuleLabel="tcpc.8.2.1.a.xiv.3"/>
+      <SuperiorityRelation inferiorRuleLabel="tcpc.8.2.1.a.xiv" superiorRuleLabel="tcpc.8.2.1.a.xiv.4"/>
+    </SuperiorityRelations>
+  <Generated><Paragraph paragraphLabel="8.2.1.a.xiv">
+  <Rules>
+    <Rule ruleLabel="tcpc.8.2.1.a.xiv.1">complaint(X), consentCloseComplaint(X) =&gt; [O] closeComplaint(X)</Rule>
+    <Rule ruleLabel="tcpc.8.2.1.a.xiv.2">complaint(X), clause821cComplied(X) =&gt; [O] closeComplaint(X)</Rule>
+    <Rule ruleLabel="tcpc.8.2.1.a.xiv.3">complaint(X), clause821dComplied(X) =&gt; [O] closeComplaint(X)</Rule>
+    <Rule ruleLabel="tcpc.8.2.1.a.xiv.4">complaint(X), clause821eComplied(X) =&gt; [O] closeComplaint(X)</Rule>
+  </Rules>
+</Paragraph></Generated></Paragraph>
+
+
+  <Paragraph paragraphLabel="8.2.1.a.xv">
+    <RelevantText>
+8.2.1 A Supplier must take the following actions to enable this outcome:
+  (a) Demonstrate fairness, courtesy, objectivity and efficiency: Suppliers must demonstrate, fairness and courtesy, objectivity, and efficiency by:
+    (xv) where a Complaint is Closed with the consent of the Consumer or former Customer, at the Consumer’s or former Customer’s requests, providing a written confirmation of the Resolution of that Complaint to be sent the Consumer or former Customer within 5 Working Days.
+    </RelevantText>
+    <Rules>
+      <Rule ruleLabel="tcpc.8.2.1.a.xv">
+        <Simple>
+          closeCase(X), complaint(X), customerConsentCloseCase(X), customerRequestConfirmationOfResolution(X) =&gt; [O] provideConfirmationResolution5Days(X)
+        </Simple>
+        <Original>
+					close case(X),complaint(X),customer consent close case(X),customer request confirmation of resolution(X) =&gt; [OAPNP]provide confirmation resolution 5 days(X)
+				</Original>
+      </Rule>
+    </Rules>
+  <Generated><Paragraph paragraphLabel="8.2.1.a.xv">
+  <Rules>
+    <Rule ruleLabel="tcpc.8.2.1.a.xv.1">complaint(X), closedWithConsent(X), requestWrittenConfirmation(X), within5WorkingDays(X) =&gt; [O] provideWrittenConfirmationOfResolution(X)</Rule>
+  </Rules>
+</Paragraph></Generated></Paragraph>
+
+
+  <Paragraph paragraphLabel="8.2.1.b">
+    <RelevantText>
+8.2.1 A Supplier must take the following actions to enable this outcome:
+  (b) Respond to dissatisfaction with timeframes: If a Consumer tells the Supplier that they are dissatisfied with the timeframes that apply to the management of a Complaint or seek to have a Complaint treated as an Urgent Complaint, the Supplier must tell the Consumer about the Supplier's internal prioritisation and internal escalation processes. If, after internal prioritisation and internal escalation the Consumer remains dissatisfied, the Supplier must tell the Consumer of the options for external dispute resolution, including the TIO.
+    </RelevantText>
+    <Rules>
+      <Rule ruleLabel="tcpc.8.2.1.b.1">
+        <Simple>
+          customerDissatisfiedTimeframe(X) =&gt; [O] informInternalPrioritisation(X)
+        </Simple>
+        <Original>
+					customer dissatisfied timeframe(X) =&gt; [OAPNP]inform internal prioritisation(X)
+				</Original>
+      </Rule>
+      <Rule ruleLabel="tcpc.8.2.1.b.2">
+        <Simple>
+          customerDissatisfiedTimeframe(X) =&gt; [O] informInternalEscalationProcess(X)
+        </Simple>
+        <Original>
+					customer dissatisfied timeframe(X) =&gt; [OAPNP]inform internal escalation process(X)
+				</Original>
+      </Rule>
+      <Rule ruleLabel="tcpc.8.2.1.b.3">
+        <Simple>
+          customerDissatisfiedTimeframe(X), escalation(X), internalPrioritisation(X) =&gt; [O] informExternalDisputeResolution(X)
+        </Simple>
+        <Original>
+					customer dissatisfied timeframe(X),escalation(X),internal prioritisation(X) =&gt; [OAPNP]inform external dispute resolution(X)
+				</Original>
+      </Rule>
+    </Rules>
+  <Generated><Paragraph paragraphLabel="8.2.1.b">
+  <Rules>
+    <Rule ruleLabel="tcpc.8.2.1.b.1">complaint(X), consumerDissatisfiedWithTimeframes(X) =&gt; [O] adviseInternalPrioritisationProcess(X)</Rule>
+    <Rule ruleLabel="tcpc.8.2.1.b.2">complaint(X), consumerDissatisfiedWithTimeframes(X) =&gt; [O] adviseInternalEscalationProcess(X)</Rule>
+    <Rule ruleLabel="tcpc.8.2.1.b.3">complaint(X), seekTreatAsUrgent(X) =&gt; [O] adviseInternalPrioritisationProcess(X)</Rule>
+    <Rule ruleLabel="tcpc.8.2.1.b.4">complaint(X), seekTreatAsUrgent(X) =&gt; [O] adviseInternalEscalationProcess(X)</Rule>
+    <Rule ruleLabel="tcpc.8.2.1.b.5">complaint(X), internalPrioritisation(X), internalEscalation(X), consumerStillDissatisfied(X) =&gt; [O] adviseExternalDisputeResolutionOptions(X)</Rule>
+  </Rules>
+</Paragraph></Generated></Paragraph>
+
+
+  <Paragraph paragraphLabel="8.2.1.c">
+    <RelevantText>
+8.2.1 A Supplier must take the following actions to enable this outcome:
+  (c) Respond to dissatisfaction with progress or outcome: If a Consumer or former Customer tells the Supplier that they are dissatisfied with the progress or Resolution of a Complaint or asks about their options to pursue a Complaint further, the Supplier must tell them about:
+      (i) the Supplier's internal escalation process; and 
+      (ii) the options for external dispute resolution including the TIO.
+    </RelevantText>
+    <Rules>
+      <Rule ruleLabel="tcpc.8.2.1.c.2">
+        <Simple>
+          customerDissatisfiedProgress(X) =&gt; [O] informInternalEscalationProcess(X)
+        </Simple>
+        <Original>
+					customer dissatisfied progress(X) =&gt; [OAPNP]inform internal escalation process(X)
+				</Original>
+      </Rule>
+      <Rule ruleLabel="tcpc.8.2.1.c.3">
+        <Simple>
+          customerDissatisfiedProgress(X) =&gt; [O] informExternalDisputeResolution(X)
+        </Simple>
+        <Original>
+					customer dissatisfied progress(X) =&gt; [OAPNP]inform external dispute resolution(X)
+				</Original>
+      </Rule>  
+      <Rule ruleLabel="tcpc.8.2.1.c.4">
+        <Simple>
+          customerDissatisfiedResolution(X) =&gt; [O] informExternalDisputeResolution(X)
+        </Simple>
+        <Original>
+					customer dissatisfied resolution(X) =&gt; [OAPNP]inform external dispute resolution(X)
+				</Original>
+      </Rule>
+      <Rule ruleLabel="tcpc.8.2.1.c.5">
+        <Simple>
+          customerDissatisfiedResolution(X) =&gt; [O] informInternalEscalationProcess(X)
+        </Simple>
+        <Original>
+					customer dissatisfied resolution(X) =&gt; [OAPNP]inform internal escalation process(X)
+				</Original>
+      </Rule>  
+      <Rule ruleLabel="tcpc.8.2.1.c.6">
+        <Simple>
+          customerAsksPursueComplaintFurther(X) =&gt; [O] informInternalEscalationProcess(X)
+        </Simple>
+        <Original>
+					customer asks pursue complaint further(X) =&gt; [OAPNP]inform internal escalation process(X)
+				</Original>
+      </Rule>
+      <Rule ruleLabel="tcpc.8.2.1.c.7">
+        <Simple>
+          customerAsksPursueComplaintFurther(X) =&gt; [O] informExternalDisputeResolution(X)
+        </Simple> 
+        <Original>
+					customer asks pursue complaint further(X) =&gt; [OAPNP]inform external dispute resolution(X)
+				</Original>
+      </Rule>
+      <Rule ruleLabel="tcpc.8.2.1.c.p">
+        <Simple>
+          customerConsentCloseCase(X), customerDissatisfiedProgress(X), informExternalDisputeResolution(X), informInternalEscalationProcess(X) =&gt; complied821c(X)
+        </Simple>
+        <Original>
+					customer consent close case(X),customer dissatisfied progress(X),inform external dispute resolution(X),inform internal escalation process(X) =&gt; complied821c(X)
+				</Original>
+      </Rule>
+      <Rule ruleLabel="tcpc.8.2.1.c.r">
+        <Simple>
+          customerConsentCloseCase(X), customerDissatisfiedResolution(X), informExternalDisputeResolution(X), informInternalEscalationProcess(X) =&gt; complied821c(X)
+        </Simple>
+        <Original>
+					customer consent close case(X),customer dissatisfied resolution(X),inform external dispute resolution(X),inform internal escalation process(X) =&gt; complied821c(X)
+				</Original>
+      </Rule>
+    </Rules>
+  <Generated><Paragraph paragraphLabel="8.2.1.c">
+  <Rules>
+    <Rule ruleLabel="tcpc.8.2.1.c.1">complaint(X), dissatisfiedProgress(X) =&gt; [O] adviseInternalEscalationProcess(X)</Rule>
+    <Rule ruleLabel="tcpc.8.2.1.c.2">complaint(X), dissatisfiedResolution(X) =&gt; [O] adviseInternalEscalationProcess(X)</Rule>
+    <Rule ruleLabel="tcpc.8.2.1.c.3">complaint(X), askOptionsPursueFurther(X) =&gt; [O] adviseInternalEscalationProcess(X)</Rule>
+    <Rule ruleLabel="tcpc.8.2.1.c.4">complaint(X), dissatisfiedProgress(X) =&gt; [O] adviseExternalDisputeResolutionOptions(X)</Rule>
+    <Rule ruleLabel="tcpc.8.2.1.c.5">complaint(X), dissatisfiedResolution(X) =&gt; [O] adviseExternalDisputeResolutionOptions(X)</Rule>
+    <Rule ruleLabel="tcpc.8.2.1.c.6">complaint(X), askOptionsPursueFurther(X) =&gt; [O] adviseExternalDisputeResolutionOptions(X)</Rule>
+  </Rules>
+</Paragraph></Generated></Paragraph>
+
+
+  </Paragraphs>
