@@ -5,6 +5,7 @@ The repository [DDL-NLP](https://github.com/gvdgdo/DDL-NLP) contains the manuall
 The dataset in this repository has been used for: 
 * Horner, E., Mateis, C., Governatori, G., Ciabattoni, A. (2025). From Legal Texts to Defeasible Deontic Logic via LLMs: A Study in Automated Semantic Analysis. arXiv. https://arxiv.org/abs/2506.08899
 
+The dataset is released under CC-BY-SA 4.0 license.
 
 ## Structure of the Repository
 ### Experiment 1 (Section 4.1)
